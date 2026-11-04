@@ -1,0 +1,48 @@
+{
+  "mode": "synthetic",
+  "period": [
+    "2026-10-01",
+    "2026-10-05"
+  ],
+  "measured_usage": "52",
+  "unit": "GiB",
+  "provider_reported_cost": null,
+  "aire_estimated_cost": "100",
+  "scenario_cost": "100",
+  "potential_volume_reduction": "10",
+  "potential_savings": "0",
+  "observed_savings": null,
+  "currency": "USD",
+  "assumptions": {
+    "source": "Hip\u00f3tese comercial sint\u00e9tica AIRE, sem validade para produ\u00e7\u00e3o",
+    "validity": [
+      "2026-10-01",
+      "2026-11-01"
+    ],
+    "billing_period": [
+      "2026-10-01",
+      "2026-10-05"
+    ],
+    "integration_ref": "dps-demo",
+    "environment": "production",
+    "meter": "logs_ingest",
+    "unit": "GiB",
+    "pool": "exclusive",
+    "currency": "USD",
+    "included_units": "20",
+    "base_fee": "50",
+    "minimum_spend": "100",
+    "discount_fraction": "0.1",
+    "tiers": [
+      {
+        "width": "20",
+        "unit_rate": "2"
+      },
+      {
+        "width": null,
+        "unit_rate": "1"
+      }
+    ],
+    "scenario_reduction": "10"
+  }
+}

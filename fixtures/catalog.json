@@ -1,0 +1,144 @@
+{
+  "schema_version": "1",
+  "mode": "synthetic",
+  "as_of": "2026-10-09",
+  "bindings": {
+    "commerce-demo": {
+      "dd-demo": {
+        "provider": "datadog",
+        "provider_scope": "synthetic-org-a",
+        "license": "synthetic-fixed-package",
+        "environments": [
+          "unattributed"
+        ],
+        "credential_ref": "aire://integrations/dd-demo",
+        "first_day": "2026-10-01",
+        "end_exclusive": "2026-10-09",
+        "meters": {
+          "ingested_logs_bytes": {
+            "unit": "byte",
+            "resource": "logs.ingested",
+            "aggregation": "sum"
+          },
+          "indexed_events_count": {
+            "unit": "event",
+            "resource": "logs.indexed",
+            "aggregation": "sum",
+            "retention_days": 15
+          },
+          "ingested_spans_bytes": {
+            "unit": "byte",
+            "resource": "traces.ingested",
+            "aggregation": "sum"
+          },
+          "indexed_spans_count": {
+            "unit": "span",
+            "resource": "traces.indexed",
+            "aggregation": "sum"
+          },
+          "custom_timeseries": {
+            "unit": "series",
+            "resource": "metrics.custom",
+            "aggregation": "mean",
+            "dimension_evidence": "tag request_id present in synthetic metric checkout.latency"
+          },
+          "infra_host_count": {
+            "unit": "host",
+            "resource": "infrastructure.hosts",
+            "aggregation": "mean"
+          },
+          "container_count": {
+            "unit": "container",
+            "resource": "infrastructure.containers",
+            "aggregation": "mean"
+          }
+        },
+        "inventory_status": "synthetic_catalog",
+        "contract_source": "synthetic provisioning manifest",
+        "contracted_products": [
+          "logs.ingested",
+          "logs.indexed",
+          "traces.ingested",
+          "traces.indexed",
+          "metrics.custom",
+          "infrastructure.hosts",
+          "infrastructure.containers"
+        ]
+      },
+      "dps-demo": {
+        "provider": "dynatrace",
+        "provider_scope": "synthetic-sub-a",
+        "license": "DPS",
+        "environments": [
+          "production",
+          "lab"
+        ],
+        "credential_ref": "aire://integrations/dps-demo",
+        "first_day": "2026-10-01",
+        "end_exclusive": "2026-10-09",
+        "meters": {
+          "logs_ingest": {
+            "unit": "GiB",
+            "resource": "logs.ingested",
+            "aggregation": "sum"
+          },
+          "logs_retain": {
+            "unit": "GiB-day",
+            "resource": "logs.retained",
+            "aggregation": "sum"
+          }
+        },
+        "inventory_status": "synthetic_catalog",
+        "contract_source": "synthetic provisioning manifest",
+        "contracted_products": [
+          "logs.ingested",
+          "logs.retained"
+        ]
+      }
+    },
+    "other-demo": {
+      "dps-other": {
+        "provider": "dynatrace",
+        "provider_scope": "synthetic-sub-b",
+        "license": "DPS",
+        "environments": [
+          "isolated"
+        ],
+        "credential_ref": "aire://integrations/dps-other",
+        "first_day": "2026-10-01",
+        "end_exclusive": "2026-10-09",
+        "meters": {
+          "logs_ingest": {
+            "unit": "GiB",
+            "resource": "logs.ingested",
+            "aggregation": "sum"
+          },
+          "logs_retain": {
+            "unit": "GiB-day",
+            "resource": "logs.retained",
+            "aggregation": "sum"
+          }
+        },
+        "inventory_status": "synthetic_catalog",
+        "contract_source": "synthetic provisioning manifest",
+        "contracted_products": [
+          "logs.ingested",
+          "logs.retained"
+        ]
+      }
+    }
+  },
+  "provider_costs": [
+    {
+      "tenant": "commerce-demo",
+      "ref": "dps-demo",
+      "start": "2026-10-01",
+      "end": "2026-10-05",
+      "currency": "USD",
+      "amount": "180.00",
+      "status": "provider_accrued",
+      "source": "synthetic statement DPS-001",
+      "scope": "subscription"
+    }
+  ]
+}

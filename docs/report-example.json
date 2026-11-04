@@ -1,0 +1,97 @@
+{
+  "schema_version": "1",
+  "mode": "synthetic",
+  "tenant": "commerce-demo",
+  "period": [
+    "2026-10-03",
+    "2026-10-05"
+  ],
+  "comparison_period": [
+    "2026-10-01",
+    "2026-10-03"
+  ],
+  "projection_assumption": "Média diária constante por 30 dias, sem sazonalidade. Contagens médias preservam a unidade.",
+  "usage": [
+    {
+      "integration_ref": "dd-demo",
+      "provider": "datadog",
+      "meter": "custom_timeseries",
+      "product": "metrics.custom",
+      "environment": "unattributed",
+      "usage": {
+        "value": "150",
+        "unit": "series",
+        "aggregation": "mean",
+        "daily": [
+          {
+            "day": "2026-10-03",
+            "value": "140"
+          },
+          {
+            "day": "2026-10-04",
+            "value": "160"
+          }
+        ],
+        "incomplete_days": []
+      },
+      "previous_usage": {
+        "value": "110",
+        "unit": "series",
+        "aggregation": "mean",
+        "daily": [
+          {
+            "day": "2026-10-01",
+            "value": "100"
+          },
+          {
+            "day": "2026-10-02",
+            "value": "120"
+          }
+        ],
+        "incomplete_days": []
+      },
+      "change": "40",
+      "projection_30d": "150",
+      "source_scope": "synthetic-org-a"
+    }
+  ],
+  "consumers": [],
+  "provider_reported_cost": [],
+  "aire_estimated_cost": null,
+  "observed_savings": null,
+  "opportunities": [
+    {
+      "period": [
+        "2026-10-03",
+        "2026-10-05"
+      ],
+      "integration_ref": "dd-demo",
+      "meter": "custom_timeseries",
+      "evidence": [
+        "tag request_id present in synthetic metric checkout.latency",
+        {
+          "previous": "110",
+          "current": "150",
+          "unit": "series"
+        }
+      ],
+      "assumptions": "A dimensão pode ser substituída sem perder segmentação operacional.",
+      "action": "Reproduzir consultas sem request_id em ambiente de teste.",
+      "possible_volume_reduction": null,
+      "potential_savings": null,
+      "observed_savings": null,
+      "risk": "Perda de correlação por requisição e de filtros de diagnóstico.",
+      "required_coverage": [
+        "Comparar alertas, SLOs e dashboards da jornada",
+        "Reproduzir um incidente conhecido com traces e logs"
+      ],
+      "confidence": "low",
+      "missing": [
+        "cardinalidade por tag",
+        "dependências de consulta",
+        "SKU e tarifa"
+      ]
+    }
+  ],
+  "provisional_days": []
+}
