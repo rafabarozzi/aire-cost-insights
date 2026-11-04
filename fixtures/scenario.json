@@ -1,0 +1,8 @@
+{
+  "source":"Hipótese comercial sintética AIRE, sem validade para produção",
+  "validity":["2026-10-01","2026-11-01"],"billing_period":["2026-10-01","2026-10-05"],
+  "integration_ref":"dps-demo","environment":"production","meter":"logs_ingest","unit":"GiB",
+  "pool":"exclusive","currency":"USD","included_units":"20","base_fee":"50","minimum_spend":"100",
+  "discount_fraction":"0.1","tiers":[{"width":"20","unit_rate":"2"},{"width":null,"unit_rate":"1"}],
+  "scenario_reduction":"10"
+}
